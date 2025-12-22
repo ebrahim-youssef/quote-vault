@@ -31,11 +31,7 @@ interface EditQuoteModalProps {
 	}
 }
 
-interface EditQuoteModalPropsExtended extends EditQuoteModalProps {
-	trigger?: React.ReactNode
-}
-
-export function EditQuoteModal({ quote, trigger }: EditQuoteModalPropsExtended) {
+export function EditQuoteModal({ quote }: EditQuoteModalProps) {
 	const { t } = useTranslation()
 	const [isPending, startTransition] = useTransition()
 	const [open, setOpen] = useState(false)

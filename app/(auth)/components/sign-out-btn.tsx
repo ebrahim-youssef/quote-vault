@@ -16,12 +16,7 @@ export default async function SignOut({ locale = 'en' }: SignOutProps) {
 				await signOut({ redirectTo: `/${locale}` })
 			}}
 		>
-			<Button
-				type="submit"
-				variant="outlineGhost"
-				className="text-sm sm:text-base"
-				aria-label="Sign out from account"
-			>
+			<Button type="submit" variant="ghost" className="text-sm sm:text-base" aria-label="Sign out from account">
 				{dict?.auth?.signOut ?? 'Sign Out'}
 			</Button>
 		</form>

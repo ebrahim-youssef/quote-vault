@@ -46,7 +46,7 @@ export default function SignIn({ locale = 'en' }: SignInProps) {
 			/>
 			<Button
 				type="submit"
-				variant="outlineGhost"
+				variant="ghost"
 				className="text-sm font-medium whitespace-nowrap rounded-[6px]"
 				aria-label={t('auth.signIn')}
 			>

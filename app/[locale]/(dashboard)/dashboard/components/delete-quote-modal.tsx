@@ -23,11 +23,7 @@ interface DeleteQuoteModalProps {
 	quoteText: string
 }
 
-interface DeleteQuoteModalPropsExtended extends DeleteQuoteModalProps {
-	trigger?: React.ReactNode
-}
-
-export function DeleteQuoteModal({ quoteId, quoteText, trigger }: DeleteQuoteModalPropsExtended) {
+export function DeleteQuoteModal({ quoteId, quoteText }: DeleteQuoteModalProps) {
 	const { t } = useTranslation()
 	const [isPending, startTransition] = useTransition()
 	const [open, setOpen] = useState(false)

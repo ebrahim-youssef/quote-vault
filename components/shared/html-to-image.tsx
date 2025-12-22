@@ -122,7 +122,7 @@ export default function HtmlToImage({ latestQuote }: HtmlToImageProps) {
 
 			<Button
 				size="lg"
-				variant="outlineGhost"
+				variant="ghost"
 				disabled={isLoading}
 				aria-label={isLoading ? t('errors.downloading') : t('errors.downloadQuote')}
 				aria-busy={isLoading}
