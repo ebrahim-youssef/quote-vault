@@ -37,7 +37,7 @@ export function CreateQuoteModal({ userId }: CreateQuoteModalProps) {
 	if (!userId) {
 		return (
 			<Button disabled>
-				<PlusCircle className="me-2 h-4 w-4" />
+				<PlusCircle className="h-4 w-4" aria-hidden="true" />
 				{t('addQuote.addButton')}
 			</Button>
 		)
@@ -115,12 +115,12 @@ export function CreateQuoteModal({ userId }: CreateQuoteModalProps) {
 	return (
 		<Dialog open={open} onOpenChange={handleOpenChange}>
 			<DialogTrigger asChild>
-				<Button variant="outline">
-					<PlusCircle className="me-2 h-4 w-4 rtl:-scale-x-100" />
+				<Button variant="default">
+					<PlusCircle className="h-4 w-4 rtl:-scale-x-100" aria-hidden="true" />
 					{t('addQuote.addButton')}
 				</Button>
 			</DialogTrigger>
-			<DialogContent className="">
+			<DialogContent className="bg-card">
 				<DialogHeader>
 					<DialogTitle className="flex items-center gap-2">
 						<Quote className="h-5 w-5" />
@@ -207,7 +207,8 @@ export function CreateQuoteModal({ userId }: CreateQuoteModalProps) {
 											disabled={isPending}
 											className="hover:text-destructive transition-colors"
 										>
-											<X className="h-3 w-3" />
+											<X className="h-3 w-3" aria-hidden="true" />
+											<span className="sr-only">{t('addQuote.removeTag', { tag })}</span>
 										</button>
 									</span>
 								))}
@@ -216,7 +217,7 @@ export function CreateQuoteModal({ userId }: CreateQuoteModalProps) {
 					</div>
 
 					{error && (
-						<div className="flex items-center gap-2 rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">
+						<div role="alert" className="flex items-center gap-2 rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">
 							<AlertCircle className="h-4 w-4" />
 							<span>{error}</span>
 						</div>

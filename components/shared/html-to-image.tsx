@@ -4,7 +4,7 @@ import download from 'downloadjs'
 import { Button } from '@/components/ui/button'
 import { Download } from 'lucide-react'
 import { toast } from 'sonner'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { isTextArabic } from '@/lib/utils'
 import { useTranslation } from 'react-i18next'
 
@@ -25,9 +25,11 @@ type HtmlToImageProps = {
 export default function HtmlToImage({ latestQuote }: HtmlToImageProps) {
 	const [isLoading, setIsLoading] = useState(false)
 	const { t } = useTranslation()
+	const cardRef = useRef<HTMLDivElement>(null)
 
 	const isArabic = isTextArabic(latestQuote.quoteText)
-	const convertHtmlToImage = async (node: HTMLElement, imageName: string) => {
+
+	const convertHtmlToImage = async (node: HTMLElement | null, imageName: string) => {
 		if (!node) {
 			toast.error(t('errors.couldNotFindElement'))
 			return
@@ -35,11 +37,9 @@ export default function HtmlToImage({ latestQuote }: HtmlToImageProps) {
 
 		try {
 			setIsLoading(true)
-			const imageDataUrl = await toPng(node, {
-				cacheBust: true,
-				pixelRatio: 2
-			})
-			download(imageDataUrl, `${imageName.slice(0, 50)}.png`)
+			const safeFilename = imageName.replace(/[^\w\s-]/g, '').trim().slice(0, 50) || 'quote'
+			const imageDataUrl = await toPng(node, { cacheBust: true, pixelRatio: 2 })
+			download(imageDataUrl, `${safeFilename}.png`)
 			toast.success(t('errors.downloadSuccess'))
 		} catch (error) {
 			console.error('Error converting to image:', error)
@@ -51,58 +51,67 @@ export default function HtmlToImage({ latestQuote }: HtmlToImageProps) {
 
 	function onSubmit(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault()
-		const node = (event.currentTarget as HTMLFormElement).children[0]
-		if (node instanceof HTMLElement) {
-			convertHtmlToImage(node, latestQuote.quoteText)
-		}
+		convertHtmlToImage(cardRef.current, latestQuote.quoteText)
 	}
 
 	return (
-		<form onSubmit={onSubmit} className="flex flex-col items-center gap-6 py-8 px-4 sm:px-6 lg:px-8">
-			<div className="w-full max-w-4xl">
-				<div className="relative rounded-lg sm:rounded-2xl p-8 sm:p-12">
+		<form onSubmit={onSubmit} className="flex flex-col items-center gap-5">
+			<div className="w-full">
+				<div
+					ref={cardRef}
+					className="ia-pattern-bg relative overflow-hidden p-8 sm:p-10 bg-card"
+					style={{
+						borderRadius: 'var(--radius-xl)',
+						border: '1px solid var(--border)',
+						boxShadow: 'var(--shadow-md)'
+					}}
+				>
+					{/* Decorative open-quote */}
 					<div
-						className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[200px] text-primary opacity-10"
+						className="pointer-events-none select-none absolute start-6 top-4 text-[120px] leading-none"
+						style={{ color: 'var(--primary)', opacity: 0.07, fontFamily: 'var(--font-display)' }}
 						aria-hidden="true"
 					>
-						“
+						&ldquo;
 					</div>
 
-					<div className="relative z-10 px-6 sm:px-8">
+					<div className="relative z-10">
 						<p
 							dir={isArabic ? 'rtl' : 'ltr'}
-							className={`text-justify text-2xl md:text-3xl text-foreground leading-relaxed mb-6 sm:mb-8 ${isArabic ? 'font-serif-ar' : 'serif!'}`}
+							className="text-start text-2xl md:text-3xl leading-relaxed mb-6 font-bold text-card-foreground"
+							style={{ fontFamily: isArabic ? 'var(--font-ar)' : 'var(--font-display)' }}
 						>
 							{latestQuote.quoteText}
 						</p>
 
-						<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-							<div className="flex-1">
-								<p className=" text-muted-foreground font-medium">&mdash; {latestQuote.author}</p>
+						<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+							<div>
+								<p className="font-medium text-sm" style={{ color: 'var(--primary)' }}>
+									&mdash; {latestQuote.author}
+								</p>
 								{latestQuote.source && (
-									<p className="text-xs sm:text-sm text-primary-foreground/70 mt-2">
-										{latestQuote.source}
-									</p>
+									<p className="text-xs mt-1 text-muted-foreground">{latestQuote.source}</p>
 								)}
 							</div>
-
-							<div className="text-left sm:text-right">
-								<p className="text-xs sm:text-sm text-primary-foreground/70">
-									shared by{' '}
-									<span className="text-primary-foreground/90 font-medium">
-										@{latestQuote.user.name || 'Anonymous'}
-									</span>
-								</p>
-							</div>
+							<p className="text-xs text-muted-foreground">
+								{t('htmlToImage.sharedBy')}{' '}
+								<span className="font-medium" style={{ color: 'var(--primary)' }}>
+									@{latestQuote.user.name || t('common.anonymous')}
+								</span>
+							</p>
 						</div>
 
-						{/* Tags */}
 						{latestQuote.tags.length > 0 && (
-							<div className="flex flex-wrap gap-2 mt-6 sm:mt-8">
+							<div className="flex flex-wrap gap-1.5 mt-5">
 								{latestQuote.tags.map((tag: string) => (
 									<span
 										key={tag}
-										className="px-2 sm:px-3 py-1 bg-primary-foreground/10 text-primary-foreground text-xs rounded-full"
+										className="text-xs px-2.5 py-1 rounded"
+										style={{
+											background: 'var(--tag-bg)',
+											color: 'var(--tag-text)',
+											border: '1px solid var(--border)'
+										}}
 									>
 										#{tag}
 									</span>
@@ -110,24 +119,17 @@ export default function HtmlToImage({ latestQuote }: HtmlToImageProps) {
 							</div>
 						)}
 					</div>
-
-					<div
-						className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 text-4xl sm:text-6xl text-primary-foreground/20"
-						aria-hidden="true"
-					>
-						&rdquo;
-					</div>
 				</div>
 			</div>
 
 			<Button
 				size="lg"
-				variant="ghost"
+				variant="default"
 				disabled={isLoading}
 				aria-label={isLoading ? t('errors.downloading') : t('errors.downloadQuote')}
 				aria-busy={isLoading}
 			>
-				<Download className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
+				<Download className="h-4 w-4" aria-hidden="true" />
 				{isLoading ? t('errors.downloading') : t('errors.downloadQuote')}
 			</Button>
 		</form>

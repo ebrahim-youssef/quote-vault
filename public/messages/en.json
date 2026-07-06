@@ -1,165 +1,179 @@
 {
-	"common": {
-		"home": "Home",
-		"dashboard": "Dashboard",
-		"profile": "Profile",
-		"settings": "Settings",
-		"logout": "Logout",
-		"language": "Language",
-		"toggleTheme": "Toggle theme",
-		"toggleLanguage": "Toggle language",
-		"scrollToTop": "Scroll to top"
-	},
-	"navigation": {
-		"back": "Back",
-		"next": "Next",
-		"cancel": "Cancel",
-		"save": "Save",
-		"delete": "Delete",
-		"edit": "Edit"
-	},
-	"landing": {
-		"latestBadge": "Latest Quote",
-		"discoverTitle": "Discover Wisdom",
-		"discoverDescription": "Explore a curated collection of quotes from our community",
-		"recentTitle": "Recent Quotes",
-		"recentDescription": "Explore wisdom shared by our community members",
-		"noQuotes": "No quotes available yet. Be the first to share!",
-		"startCreating": "Start Creating",
-		"ctaTitle": "Build Your Quote Collection",
-		"ctaDescription": "Save, organize, and share your favorite quotes with our community. Create beautiful, shareable quote images.",
-		"getStarted": "Get Started",
-		"learnMore": "Learn More"
-	},
-	"addQuote": {
-		"addButton": "Add New Quote",
-		"title": "Add New Quote",
-		"description": "Create a new quote to add to your collection",
-		"quoteLabel": "Quote",
-		"authorLabel": "Author",
-		"sourceLabel": "Source (Optional)",
-		"sourceHelp": "Where this quote comes from",
-		"tagsLabel": "Tags (Optional)",
-		"tagsAdd": "Add",
-		"tagsPlaceholder": "Add a tag and press Enter",
-		"quotePlaceholder": "Enter the quote text...",
-		"authorPlaceholder": "e.g., Albert Einstein",
-		"sourcePlaceholder": "e.g., Book title, speech, interview...",
-		"cancel": "Cancel",
-		"creating": "Creating...",
-		"saveQuote": "Save Quote",
-		"errorFill": "Please fill in all required fields",
-		"errorCreate": "Failed to create quote",
-		"successCreated": "Quote created successfully",
-		"errorUnexpected": "An unexpected error occurred"
-	},
-	"dashboard": {
-		"editQuote": "Edit Quote",
-		"deleteQuote": "Delete Quote",
-		"quotesCollected": "Quotes Collected",
-		"publicQuotes": "Public Quotes",
-		"yourQuotes": "Your Quotes",
-		"manageCollection": "Manage your collection of quotes"
-	},
-
-	"dashboardEmpty": {
-		"noQuotesTitle": "No quotes yet",
-		"noQuotesDescription": "Start building your quote collection by creating your first quote.",
-		"startBuilding": "Start building"
-	},
-
-	"editQuote": {
-		"title": "Edit Quote",
-		"description": "Make changes to your quote",
-		"quoteLabel": "Quote",
-		"authorLabel": "Author",
-		"sourceLabel": "Source (Optional)",
-		"isPublicLabel": "Is Public",
-		"isPublicHelp": "set this quote as public",
-		"sourceHelp": "Where this quote comes from",
-		"tagsLabel": "Tags (Optional)",
-		"tagsAdd": "Add",
-		"tagsPlaceholder": "Add a tag and press Enter",
-		"quotePlaceholder": "Enter the quote text...",
-		"authorPlaceholder": "e.g., Albert Einstein",
-		"sourcePlaceholder": "e.g., Book title, speech, interview...",
-		"cancel": "Cancel",
-		"updating": "Updating...",
-		"saveChanges": "Save Changes",
-		"errorFill": "Please fill in all required fields",
-		"successUpdated": "Quote updated successfully",
-		"unexpected": "An unexpected error occurred"
-	},
-	"deleteQuote": {
-		"title": "Delete Quote",
-		"description": "Are you sure you want to delete this quote? This action cannot be undone.",
-		"cancel": "Cancel",
-		"deleting": "Deleting...",
-		"deleteAction": "Delete Quote",
-		"successDeleted": "Quote deleted successfully",
-		"errorDelete": "Failed to delete quote",
-		"unexpected": "An unexpected error occurred"
-	},
-
-	"htmlToImage": {
-		"sharedBy": "shared by"
-	},
-	"errors": {
-		"dashboardTitle": "Dashboard Error",
-		"dashboardDescription": "Something went wrong in your dashboard.",
-		"tryAgain": "Try again",
-		"somethingWrong": "Something went wrong!",
-		"processingError": "We encountered an error while processing your request.",
-		"mustBeLoggedIn": "You must be logged in to continue",
-		"invalidFields": "Quote text and author are required",
-		"maxTags": "Maximum 50 tags allowed",
-		"alreadyExists": "This quote already exists",
-		"failedCreate": "Failed to create quote. Please try again.",
-		"failedDelete": "Failed to delete quote. Please try again.",
-		"failedUpdate": "Failed to update quote. Please try again.",
-		"invalidId": "Invalid quote ID",
-		"quoteNotFound": "Quote not found",
-		"noPermission": "You do not have permission to perform this action",
-		"couldNotFindElement": "Could not find quote element",
-		"downloadSuccess": "Quote downloaded successfully",
-		"downloadFailed": "Failed to download quote. Please try again.",
-		"downloading": "Downloading...",
-		"downloadQuote": "Download Quote"
-	},
-	"notFound": {
-		"dashboardMissing": "The dashboard page you're looking for doesn't exist.",
-		"pageTitle": "Page Not Found",
-		"home": "Home"
-	},
-	"footer": {
-		"followUs": "Follow Us",
-		"navigation": "Navigation",
-		"home": "Home",
-		"dashboard": "Dashboard",
-		"privacy": "Privacy",
-		"terms": "Terms",
-		"brandDescription": "Building amazing experiences for the modern web.",
-		"allRights": "All rights reserved."
-	},
-	"branding": {
-		"name": "Quote Vault",
-		"description": "Your personal quote management system."
-	},
-	"status": {
-		"public": "Public",
-		"private": "Private"
-	},
-	"auth": {
-		"emailPlaceholder": "Email",
-		"passwordPlaceholder": "Password",
-		"signIn": "Sign In",
-		"signOut": "Sign Out"
-	},
-	"authErrors": {
-		"invalidCredentials": "Invalid email or password",
-		"authFailed": "Authentication failed. Please try again.",
-		"signinError": "An error occurred during sign-in",
-		"unexpected": "An unexpected error occurred",
-		"failed": "Failed to sign in"
-	}
+  "common": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "language": "Language",
+    "toggleTheme": "Toggle theme",
+    "toggleLanguage": "Toggle language",
+    "scrollToTop": "Scroll to top",
+    "user": "User",
+    "anonymous": "Anonymous"
+  },
+  "navigation": {
+    "back": "Back",
+    "next": "Next",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+  "landing": {
+    "latestBadge": "Latest Quote",
+    "discoverTitle": "Discover Wisdom",
+    "discoverDescription": "Explore quotes shared by our community",
+    "recentTitle": "Recent Quotes",
+    "recentDescription": "Explore wisdom shared by our community members",
+    "noQuotes": "No quotes available yet. Be the first to share!",
+    "startCreating": "Start Creating",
+    "ctaTitle": "Build Your Quote Collection",
+    "ctaDescription": "Save, organize, and share your favorite quotes with our community. Create beautiful, shareable quote images.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "exploreQuotes": "Explore Quotes",
+    "featureSaveTitle": "Save",
+    "featureSaveDesc": "Save quotes from books, articles, or anywhere that moves you.",
+    "featureOrganizeTitle": "Organize",
+    "featureOrganizeDesc": "Tag and categorize your collection to find any quote instantly.",
+    "featureShareTitle": "Share",
+    "featureShareDesc": "Export beautiful quote cards as images to share with the world.",
+    "communityEyebrow": "Community"
+  },
+  "addQuote": {
+    "addButton": "Add New Quote",
+    "title": "Add New Quote",
+    "description": "Create a new quote to add to your collection",
+    "quoteLabel": "Quote",
+    "authorLabel": "Author",
+    "sourceLabel": "Source (Optional)",
+    "sourceHelp": "Where this quote comes from",
+    "tagsLabel": "Tags (Optional)",
+    "tagsAdd": "Add",
+    "tagsPlaceholder": "Add a tag and press Enter",
+    "quotePlaceholder": "Enter the quote text...",
+    "authorPlaceholder": "e.g., Albert Einstein",
+    "sourcePlaceholder": "e.g., Book title, speech, interview...",
+    "cancel": "Cancel",
+    "creating": "Creating...",
+    "saveQuote": "Save Quote",
+    "errorFill": "Please fill in all required fields",
+    "errorCreate": "Failed to create quote",
+    "successCreated": "Quote created successfully",
+    "errorUnexpected": "An unexpected error occurred",
+    "removeTag": "Remove {{tag}}"
+  },
+  "dashboard": {
+    "editQuote": "Edit Quote",
+    "deleteQuote": "Delete Quote",
+    "quotesCollected": "Quotes Collected",
+    "publicQuotes": "Public Quotes",
+    "yourQuotes": "Your Quotes",
+    "manageCollection": "Your quotes, all in one place.",
+    "collection": "Collection"
+  },
+  "dashboardEmpty": {
+    "noQuotesTitle": "No quotes yet",
+    "noQuotesDescription": "Start building your quote collection by creating your first quote.",
+    "startBuilding": "Start building"
+  },
+  "editQuote": {
+    "title": "Edit Quote",
+    "description": "Make changes to your quote",
+    "quoteLabel": "Quote",
+    "authorLabel": "Author",
+    "sourceLabel": "Source (Optional)",
+    "isPublicLabel": "Is Public",
+    "isPublicHelp": "set this quote as public",
+    "sourceHelp": "Where this quote comes from",
+    "tagsLabel": "Tags (Optional)",
+    "tagsAdd": "Add",
+    "tagsPlaceholder": "Add a tag and press Enter",
+    "quotePlaceholder": "Enter the quote text...",
+    "authorPlaceholder": "e.g., Albert Einstein",
+    "sourcePlaceholder": "e.g., Book title, speech, interview...",
+    "cancel": "Cancel",
+    "updating": "Updating...",
+    "saveChanges": "Save Changes",
+    "errorFill": "Please fill in all required fields",
+    "successUpdated": "Quote updated successfully",
+    "unexpected": "An unexpected error occurred",
+    "removeTag": "Remove {{tag}}"
+  },
+  "deleteQuote": {
+    "title": "Delete Quote",
+    "description": "Are you sure you want to delete this quote? This action cannot be undone.",
+    "cancel": "Cancel",
+    "deleting": "Deleting...",
+    "deleteAction": "Delete Quote",
+    "successDeleted": "Quote deleted successfully",
+    "errorDelete": "Failed to delete quote",
+    "unexpected": "An unexpected error occurred"
+  },
+  "htmlToImage": {
+    "sharedBy": "shared by"
+  },
+  "errors": {
+    "dashboardTitle": "Dashboard Error",
+    "dashboardDescription": "Something went wrong in your dashboard.",
+    "tryAgain": "Try again",
+    "somethingWrong": "Something went wrong!",
+    "processingError": "Something went wrong on our end. Give it another try.",
+    "mustBeLoggedIn": "You must be logged in to continue",
+    "invalidFields": "Quote text and author are required",
+    "maxTags": "Maximum 50 tags allowed",
+    "alreadyExists": "This quote already exists",
+    "failedCreate": "Failed to create quote. Please try again.",
+    "failedDelete": "Failed to delete quote. Please try again.",
+    "failedUpdate": "Failed to update quote. Please try again.",
+    "invalidId": "Invalid quote ID",
+    "quoteNotFound": "Quote not found",
+    "noPermission": "You do not have permission to perform this action",
+    "couldNotFindElement": "Could not find quote element",
+    "downloadSuccess": "Quote downloaded successfully",
+    "downloadFailed": "Failed to download quote. Please try again.",
+    "downloading": "Downloading...",
+    "downloadQuote": "Download Quote"
+  },
+  "notFound": {
+    "dashboardMissing": "The dashboard page you're looking for doesn't exist.",
+    "pageTitle": "Page Not Found",
+    "pageDescription": "The page you're looking for could not be found.",
+    "home": "Home"
+  },
+  "footer": {
+    "followUs": "Follow Us",
+    "navigation": "Navigation",
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "tagline": "Warm. Grounded. Intentional.",
+    "brandDescription": "A simple place to keep the words that stuck with you.",
+    "builtWithCare": "Built with care"
+  },
+  "branding": {
+    "name": "Quote Vault",
+    "description": "Your personal space for quotes that matter."
+  },
+  "status": {
+    "public": "Public",
+    "private": "Private"
+  },
+  "auth": {
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "signInTitle": "Sign in to Quote Vault",
+    "signInDescription": "New here? Just sign in — we'll handle the rest."
+  },
+  "authErrors": {
+    "invalidCredentials": "Invalid email or password",
+    "authFailed": "Authentication failed. Please try again.",
+    "signinError": "An error occurred during sign-in",
+    "unexpected": "An unexpected error occurred",
+    "failed": "Failed to sign in"
+  }
 }

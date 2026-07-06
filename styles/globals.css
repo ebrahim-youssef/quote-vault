@@ -1,75 +1,572 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-:root {
-	--radius: 0.625rem;
-	--background: oklch(0.98 0.002 247);
-	--foreground: oklch(0.2 0.01 253);
-	--card: oklch(1 0 0);
-	--card-foreground: oklch(0.2 0.01 253);
-	--popover: oklch(1 0 0);
-	--popover-foreground: oklch(0.2 0.01 253);
-	--primary: oklch(0.42 0.06 250);
-	--primary-foreground: oklch(1 0 0);
-	--secondary: oklch(0.95 0.003 247);
-	--secondary-foreground: oklch(0.2 0.01 253);
-	--muted: oklch(0.97 0.002 247);
-	--muted-foreground: oklch(0.48 0.01 253);
-	--accent: oklch(0.45 0.07 255);
-	--accent-foreground: oklch(1 0 0);
-	--destructive: oklch(0.5 0.17 25);
-	--border: oklch(0.92 0.005 247);
-	--input: oklch(0.92 0.005 247);
-	--ring: oklch(0.42 0.06 250);
-	--chart-1: oklch(0.646 0.222 41.116);
-	--chart-2: oklch(0.6 0.118 184.704);
-	--chart-3: oklch(0.398 0.07 227.392);
-	--chart-4: oklch(0.828 0.189 84.429);
-	--chart-5: oklch(0.769 0.188 70.08);
-	--sidebar: oklch(1 0 0);
-	--sidebar-foreground: oklch(0.2 0.01 253);
-	--sidebar-primary: oklch(0.42 0.06 250);
-	--sidebar-primary-foreground: oklch(1 0 0);
-	--sidebar-accent: oklch(0.98 0.002 247);
-	--sidebar-accent-foreground: oklch(0.2 0.01 253);
-	--sidebar-border: oklch(0.92 0.005 247);
-	--sidebar-ring: oklch(0.42 0.06 250);
+
+/* ─── @font-face: Plus Jakarta Sans ─────────────────────────────────────── */
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-ExtraLight.ttf');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-ExtraLightItalic.ttf');
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-Light.ttf');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-LightItalic.ttf');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-Regular.ttf');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-Italic.ttf');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-Medium.ttf');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-MediumItalic.ttf');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-SemiBold.ttf');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-SemiBoldItalic.ttf');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-BoldItalic.ttf');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-ExtraBold.ttf');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	src: url('/fonts/PlusJakartaSans-ExtraBoldItalic.ttf');
+	font-weight: 800;
+	font-style: italic;
+	font-display: swap;
 }
 
+/* ─── @font-face: DM Sans ────────────────────────────────────────────────── */
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-ExtraLight.ttf');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-ExtraLightItalic.ttf');
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-Light.ttf');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-LightItalic.ttf');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-Regular.ttf');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-Italic.ttf');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-Medium.ttf');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-MediumItalic.ttf');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-SemiBold.ttf');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-SemiBoldItalic.ttf');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-BoldItalic.ttf');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-ExtraBold.ttf');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-ExtraBoldItalic.ttf');
+	font-weight: 800;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-Black.ttf');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/fonts/DMSans-BlackItalic.ttf');
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* ─── @font-face: JetBrains Mono ─────────────────────────────────────────── */
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-Thin.ttf');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-ThinItalic.ttf');
+	font-weight: 100;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-ExtraLight.ttf');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-ExtraLightItalic.ttf');
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-Light.ttf');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-LightItalic.ttf');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-Regular.ttf');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-Italic.ttf');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-Medium.ttf');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-MediumItalic.ttf');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-SemiBold.ttf');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-SemiBoldItalic.ttf');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-BoldItalic.ttf');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* ─── @font-face: Cairo (Arabic) ─────────────────────────────────────────── */
+@font-face {
+	font-family: 'Cairo';
+	src: url('/fonts/Cairo-ExtraLight.ttf');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Cairo';
+	src: url('/fonts/Cairo-Light.ttf');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Cairo';
+	src: url('/fonts/Cairo-Regular.ttf');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Cairo';
+	src: url('/fonts/Cairo-Medium.ttf');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Cairo';
+	src: url('/fonts/Cairo-SemiBold.ttf');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Cairo';
+	src: url('/fonts/Cairo-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Cairo';
+	src: url('/fonts/Cairo-ExtraBold.ttf');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Cairo';
+	src: url('/fonts/Cairo-Black.ttf');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* ─── @font-face: Tajawal (Arabic soft alt) ──────────────────────────────── */
+@font-face {
+	font-family: 'Tajawal';
+	src: url('/fonts/Tajawal-ExtraLight.ttf');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Tajawal';
+	src: url('/fonts/Tajawal-Light.ttf');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Tajawal';
+	src: url('/fonts/Tajawal-Regular.ttf');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Tajawal';
+	src: url('/fonts/Tajawal-Medium.ttf');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Tajawal';
+	src: url('/fonts/Tajawal-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Tajawal';
+	src: url('/fonts/Tajawal-ExtraBold.ttf');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Tajawal';
+	src: url('/fonts/Tajawal-Black.ttf');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* ─── Brand primitive tokens ─────────────────────────────────────────────── */
+:root {
+	/* Teal scale */
+	--teal-900: #0c3437;
+	--teal-700: #134e52;
+	--teal-500: #1e6a6f;
+	--teal-300: #4e9095;
+
+	/* Gold scale */
+	--gold-600: #a87a2e;
+	--gold-500: #c4943f;
+	--gold-300: #ddbe83;
+
+	/* Canvas & surfaces */
+	--cream: #fef8ec;
+	--cream-200: #f7efdd;
+
+	/* Accents */
+	--coral-500: #c4694e;
+	--coral-600: #a8553d;
+	--sage-500: #6b9b7a;
+
+	/* Dark surfaces */
+	--charcoal: #1a1f20;
+	--dark-surface: #2a3234;
+	--dark-elev: #36403f;
+
+	/* Neutrals */
+	--warm-gray: #b0a898;
+	--light-gray: #e8e3db;
+
+	/* ── Shadcn semantic variables (light) ── */
+	--radius: 0.5rem;
+	--background: var(--cream);
+	--foreground: var(--charcoal);
+	--card: #ffffff;
+	--card-foreground: var(--charcoal);
+	--popover: #ffffff;
+	--popover-foreground: var(--charcoal);
+	--primary: var(--teal-700);
+	--primary-foreground: var(--cream);
+	--secondary: var(--cream-200);
+	--secondary-foreground: var(--charcoal);
+	--muted: var(--cream-200);
+	--muted-foreground: var(--warm-gray);
+	--accent: var(--gold-500);
+	--accent-foreground: var(--cream);
+	--destructive: var(--coral-600);
+	--border: var(--light-gray);
+	--input: var(--light-gray);
+	--ring: var(--teal-300);
+
+	/* Charts (warm palette) */
+	--chart-1: var(--coral-500);
+	--chart-2: var(--teal-500);
+	--chart-3: var(--gold-500);
+	--chart-4: var(--sage-500);
+	--chart-5: var(--gold-300);
+
+	/* Sidebar */
+	--sidebar: #ffffff;
+	--sidebar-foreground: var(--charcoal);
+	--sidebar-primary: var(--teal-700);
+	--sidebar-primary-foreground: var(--cream);
+	--sidebar-accent: var(--cream-200);
+	--sidebar-accent-foreground: var(--charcoal);
+	--sidebar-border: var(--light-gray);
+	--sidebar-ring: var(--teal-300);
+
+	/* ── Brand shadows (warm-tinted, never harsh black) ── */
+	--shadow-xs: 0 1px 2px rgba(26, 31, 32, 0.05);
+	--shadow-sm: 0 2px 8px rgba(19, 78, 82, 0.06);
+	--shadow-md: 0 6px 20px rgba(19, 78, 82, 0.08);
+	--shadow-lg: 0 16px 40px rgba(19, 78, 82, 0.12);
+	--shadow-gold: 0 6px 20px rgba(196, 148, 63, 0.28);
+
+	/* ── Motion ── */
+	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+	--dur-fast: 120ms;
+	--dur-base: 200ms;
+	--dur-slow: 320ms;
+
+	/* ── Pattern opacity ── */
+	--pattern-bg-opacity: 0.07;
+	--pattern-deco-opacity: 0.18;
+
+	/* ── Font families ── */
+	--font-display: 'Plus Jakarta Sans', 'Cairo', system-ui, sans-serif;
+	--font-body: 'DM Sans', 'Cairo', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+	--font-ar: 'Cairo', 'Plus Jakarta Sans', system-ui, sans-serif;
+	--font-ar-soft: 'Tajawal', 'Cairo', system-ui, sans-serif;
+
+	/* ── Dark-mode-aware component tokens ── */
+	--nav-brand: var(--teal-700);
+	--nav-link: var(--teal-700);
+	--header-bg: color-mix(in srgb, var(--cream) 86%, transparent);
+	--tag-bg: var(--cream-200);
+	--tag-text: var(--warm-gray);
+}
+
+/* ── Dark mode ─────────────────────────────────────────────────────────── */
 .dark {
-	--background: oklch(0.2 0.01 253);
-	--foreground: oklch(0.98 0.002 247);
-	--card: oklch(0.25 0.01 253);
-	--card-foreground: oklch(0.98 0.002 247);
-	--popover: oklch(0.3 0.01 253);
-	--popover-foreground: oklch(0.98 0.002 247);
-	--primary: oklch(0.55 0.08 250);
-	--primary-foreground: oklch(0.98 0.002 247);
-	--secondary: oklch(0.28 0.01 253);
-	--secondary-foreground: oklch(0.98 0.002 247);
-	--muted: oklch(0.32 0.01 253);
-	--muted-foreground: oklch(0.65 0.01 253);
-	--accent: oklch(0.58 0.09 255);
-	--accent-foreground: oklch(0.98 0.002 247);
-	--destructive: oklch(0.58 0.19 25);
-	--border: oklch(1 0 0 / 10%);
-	--input: oklch(1 0 0 / 15%);
-	--ring: oklch(0.55 0.08 250);
-	--chart-1: oklch(0.488 0.243 264.376);
-	--chart-2: oklch(0.696 0.17 162.48);
-	--chart-3: oklch(0.769 0.188 70.08);
-	--chart-4: oklch(0.627 0.265 303.9);
-	--chart-5: oklch(0.645 0.246 16.439);
-	--sidebar: oklch(0.25 0.01 253);
-	--sidebar-foreground: oklch(0.98 0.002 247);
-	--sidebar-primary: oklch(0.55 0.08 250);
-	--sidebar-primary-foreground: oklch(0.98 0.002 247);
-	--sidebar-accent: oklch(0.3 0.01 253);
-	--sidebar-accent-foreground: oklch(0.98 0.002 247);
-	--sidebar-border: oklch(1 0 0 / 10%);
-	--sidebar-ring: oklch(0.5 0.07 250);
+	--background: var(--charcoal);
+	--foreground: var(--cream);
+	--card: var(--dark-surface);
+	--card-foreground: var(--cream);
+	--popover: #20272a;
+	--popover-foreground: var(--cream);
+	--primary: var(--teal-500);
+	--primary-foreground: var(--cream);
+	--secondary: #20272a;
+	--secondary-foreground: var(--cream);
+	--muted: #20272a;
+	--muted-foreground: var(--warm-gray);
+	--accent: var(--gold-500);
+	--accent-foreground: var(--charcoal);
+	--destructive: var(--coral-500);
+	--border: var(--dark-elev);
+	--input: var(--dark-elev);
+	--ring: var(--teal-500);
+
+	--sidebar: var(--dark-surface);
+	--sidebar-foreground: var(--cream);
+	--sidebar-primary: var(--teal-500);
+	--sidebar-primary-foreground: var(--cream);
+	--sidebar-accent: var(--dark-elev);
+	--sidebar-accent-foreground: var(--cream);
+	--sidebar-border: var(--dark-elev);
+	--sidebar-ring: var(--teal-500);
+
+	/* ── Dark-mode-aware component tokens ── */
+	--nav-brand: var(--cream);
+	--nav-link: var(--teal-300);
+	--header-bg: color-mix(in srgb, var(--dark-surface) 88%, transparent);
+	--tag-bg: var(--dark-elev);
+	--tag-text: var(--cream);
 }
 
 @custom-variant dark (&:is(.dark *));
+
+/* ── Tailwind theme wiring ──────────────────────────────────────────────── */
 @theme {
 	--height-footer: 5rem;
 	--height-header: 5rem;
@@ -77,10 +574,11 @@
 }
 
 @theme inline {
-	--radius-sm: calc(var(--radius) - 4px);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) + 4px);
+	--radius-sm: calc(var(--radius) - 2px);
+	--radius-md: calc(var(--radius) + 4px);
+	--radius-lg: calc(var(--radius) + 8px);
+	--radius-xl: calc(var(--radius) + 16px);
+
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
 	--color-card: var(--card);
@@ -112,28 +610,146 @@
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
+	--color-nav-brand: var(--nav-brand);
+	--color-nav-link: var(--nav-link);
+	--color-tag-bg: var(--tag-bg);
+	--color-tag-text: var(--tag-text);
+
+	--color-teal-300: var(--teal-300);
+	--color-gold-500: var(--gold-500);
+	--shadow-gold: var(--shadow-gold);
 }
+
+/* ── Base layer ─────────────────────────────────────────────────────────── */
 @layer base {
-	* {
+	*,
+	*::before,
+	*::after {
 		@apply border-border outline-ring/50;
+		box-sizing: border-box;
 	}
+
+	html {
+		-webkit-text-size-adjust: 100%;
+		scroll-behavior: smooth;
+	}
+
 	body {
 		@apply bg-background text-foreground;
+		font-family: var(--font-body);
+		font-size: 16px;
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
 	}
 
+	/* ── Headings: Plus Jakarta Sans, teal ── */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-display);
+		color: var(--teal-700);
+		font-weight: 700;
+		line-height: 1.25;
+		margin: 0 0 0.75rem;
+		text-wrap: balance;
+	}
+
+	.dark h1,
+	.dark h2,
+	.dark h3,
+	.dark h4,
+	.dark h5,
+	.dark h6 {
+		color: var(--cream);
+	}
+
+	h1 {
+		font-size: 2rem;
+		letter-spacing: -0.02em;
+	}
+	h2 {
+		font-size: 1.5rem;
+	}
+	h3 {
+		font-size: 1.188rem;
+		font-weight: 600;
+	}
+
+	p {
+		margin: 0 0 1rem;
+		max-width: 68ch;
+		text-wrap: pretty;
+	}
+
+	a {
+		color: var(--teal-700);
+		text-decoration: none;
+		transition: color var(--dur-fast) var(--ease-soft);
+	}
+	a:hover {
+		color: var(--gold-500);
+	}
+	.dark a {
+		color: var(--gold-500);
+	}
+	.dark a:hover {
+		color: var(--gold-300);
+	}
+
+	code,
+	kbd,
+	pre,
+	samp {
+		font-family: var(--font-mono);
+		font-size: 0.9em;
+	}
+
+	::selection {
+		background: var(--gold-300);
+		color: var(--charcoal);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--teal-300);
+		outline-offset: 2px;
+		border-radius: 6px;
+	}
+
+	/* ── RTL / bilingual ── */
 	html[dir='rtl'] {
 		direction: rtl;
+		font-family: var(--font-ar);
 	}
-
 	html[dir='ltr'] {
 		direction: ltr;
+	}
+
+	html[dir='rtl'] h1,
+	html[dir='rtl'] h2,
+	html[dir='rtl'] h3,
+	html[dir='rtl'] h4,
+	html[dir='rtl'] h5,
+	html[dir='rtl'] h6 {
+		font-family: var(--font-ar);
+	}
+
+	html[dir='rtl'] body,
+	html[dir='rtl'] button,
+	html[dir='rtl'] input,
+	html[dir='rtl'] select,
+	html[dir='rtl'] textarea,
+	html[dir='rtl'] label {
+		font-family: var(--font-ar);
 	}
 
 	html[dir='rtl'] button,
 	html[dir='rtl'] [role='button'] {
 		text-align: right;
 	}
-
 	html[dir='ltr'] button,
 	html[dir='ltr'] [role='button'] {
 		text-align: left;
@@ -144,7 +760,6 @@
 	html[dir='rtl'] select {
 		text-align: right;
 	}
-
 	html[dir='ltr'] input,
 	html[dir='ltr'] textarea,
 	html[dir='ltr'] select {
@@ -154,7 +769,6 @@
 	html[dir='rtl'] nav {
 		direction: rtl;
 	}
-
 	html[dir='ltr'] nav {
 		direction: ltr;
 	}
@@ -162,17 +776,12 @@
 	html[dir='rtl'] [data-mirror-rtl='true'] {
 		transform: scaleX(-1);
 	}
-
 	html[dir='rtl'] {
 		text-align: right;
+		letter-spacing: 0.02em;
 	}
-
 	html[dir='ltr'] {
 		text-align: left;
-	}
-
-	html[dir='rtl'] {
-		letter-spacing: 0.02em;
 	}
 
 	html[dir='rtl'] body {
@@ -182,59 +791,143 @@
 		text-rendering: optimizeLegibility;
 	}
 
-	:root {
-		--font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-		--font-serif-en: Georgia, 'Times New Roman', Times, serif;
-		--font-serif-ar: 'Noto Naskh Arabic', 'Arabic Typesetting', Arial, sans-serif;
+	/* ── Font utility classes ── */
+	.font-display {
+		font-family: var(--font-display) !important;
+	}
+	.font-body {
+		font-family: var(--font-body) !important;
+	}
+	.font-mono {
+		font-family: var(--font-mono) !important;
+	}
+	.font-ar {
+		font-family: var(--font-ar) !important;
+	}
+	.font-ar-soft {
+		font-family: var(--font-ar-soft) !important;
 	}
 
+	/* legacy aliases kept for existing component references */
 	.font-sans-ui {
-		font-family: var(--font-sans, var(--font-sans));
+		font-family: var(--font-body);
 	}
-
 	.font-serif-en {
-		font-family: var(--font-serif-en, var(--font-serif-en));
+		font-family: var(--font-display);
 	}
-
 	.font-serif-ar {
-		font-family: var(--font-serif-ar, var(--font-serif-ar));
+		font-family: var(--font-ar);
 	}
-
 	.font-brand {
-		font-family: 'Georgia', 'Noto Naskh Arabic', serif !important;
+		font-family: var(--font-display) !important;
 		font-weight: 700;
 	}
-
-	html[lang^='en'] h1,
-	html[lang^='en'] h2,
-	html[lang^='en'] h3,
-	html[lang^='en'] h4,
-	html[lang^='en'] blockquote,
-	html[lang^='en'] .serif {
-		font-family: var(--font-serif-en);
-		font-size: 1.15em;
-		letter-spacing: normal;
+	.serif {
+		font-family: var(--font-display);
 	}
 
-	html[dir='rtl'] h1,
-	html[dir='rtl'] h2,
-	html[dir='rtl'] h3,
-	html[dir='rtl'] h4,
-	html[dir='rtl'] blockquote,
-	html[lang^='ar'] .serif {
-		font-family: var(--font-serif-ar);
-		font-weight: 500;
-		line-height: 1.8;
-		letter-spacing: 0.02em;
+	/* ── Eyebrow / label ── */
+	.eyebrow {
+		font-family: var(--font-body);
+		font-size: 0.75rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: var(--gold-600);
+	}
+	.dark .eyebrow {
+		color: var(--gold-500);
 	}
 
-	body,
-	button,
-	input,
-	select,
-	textarea,
-	label,
-	.small-ui {
-		font-family: var(--font-sans);
+	/* ── Islamic geometric pattern utilities ── */
+
+	/* Background tessellation watermark */
+	.ia-pattern-bg {
+		position: relative;
+		isolation: isolate;
+	}
+	.ia-pattern-bg::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: url('/assets/pattern-tessellation.svg');
+		background-size: 160px;
+		opacity: var(--pattern-bg-opacity);
+		pointer-events: none;
+		z-index: -1;
+	}
+	.ia-pattern-bg--teal::before {
+		background-image: url('/assets/pattern-tessellation-teal.svg');
+	}
+
+	/* Diamond-lattice divider */
+	.ia-divider {
+		height: 16px;
+		background-image: url('/assets/pattern-lattice.svg');
+		background-size: auto 16px;
+		background-repeat: repeat-x;
+		opacity: 0.5;
+		border: 0;
+		margin: 2rem 0;
+	}
+
+	/* Corner star accent — drop inside a positioned card */
+	.ia-star-accent {
+		position: absolute;
+		top: 0.75rem;
+		inset-inline-end: 0.75rem;
+		width: 28px;
+		height: 28px;
+		background: url('/assets/star-8.svg') center / contain no-repeat;
+		opacity: var(--pattern-deco-opacity);
+		pointer-events: none;
+	}
+
+	/* Quote card hover: lift + gold glow */
+	.quote-card:hover {
+		box-shadow: var(--shadow-gold) !important;
+		transform: translateY(-3px);
+	}
+
+	/* Footer nav link hover */
+	.footer-nav-link {
+		color: rgba(254, 248, 236, 0.7);
+	}
+	.footer-nav-link:hover {
+		color: var(--gold-300) !important;
+	}
+
+	/* ── Entry animations ── */
+	@keyframes fadeSlideUp {
+		from {
+			opacity: 0;
+			transform: translateY(18px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.animate-entry {
+		animation: fadeSlideUp 0.55s var(--ease-out) both;
+	}
+	.animate-entry-d1 {
+		animation-delay: 80ms;
+	}
+	.animate-entry-d2 {
+		animation-delay: 160ms;
+	}
+	.animate-entry-d3 {
+		animation-delay: 240ms;
+	}
+	.animate-entry-d4 {
+		animation-delay: 320ms;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.animate-entry {
+			animation: none;
+		}
 	}
 }

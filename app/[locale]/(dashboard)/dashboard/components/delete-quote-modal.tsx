@@ -53,26 +53,24 @@ export function DeleteQuoteModal({ quoteId, quoteText }: DeleteQuoteModalProps) 
 	return (
 		<AlertDialog open={open} onOpenChange={setOpen}>
 			<AlertDialogTrigger asChild>
-				<Button variant="destructive" size="sm" className="flex-1 flex items-center gap-2 rtl:flex-row-reverse">
-					<Trash2 className="me-2 h-4 w-4 rtl:-scale-x-100" />
+				<Button variant="destructive" size="sm" className="flex-1">
+					<Trash2 className="h-4 w-4 rtl:-scale-x-100" aria-hidden="true" />
 					{t('navigation.delete')}
 				</Button>
 			</AlertDialogTrigger>
-			<AlertDialogContent>
+			<AlertDialogContent className="bg-card">
 				<AlertDialogHeader>
 					<AlertDialogTitle>{t('deleteQuote.title')}</AlertDialogTitle>
-					<AlertDialogDescription className="space-y-2">
-						<p>{t('deleteQuote.description')}</p>
-						<div className="mt-4 p-4 rounded-lg bg-muted border border-border">
-							<p className="text-sm text-foreground italic">
-								&quot;{quoteText.length > 100 ? quoteText.substring(0, 100) + '...' : quoteText}&quot;
-							</p>
-						</div>
-					</AlertDialogDescription>
+					<AlertDialogDescription>{t('deleteQuote.description')}</AlertDialogDescription>
+					<div className="mt-4 p-4 rounded-lg bg-muted border border-border">
+						<p className="text-sm text-foreground italic">
+							&quot;{quoteText.length > 100 ? quoteText.substring(0, 100) + '...' : quoteText}&quot;
+						</p>
+					</div>
 				</AlertDialogHeader>
 
 				{error && (
-					<div className="flex items-center gap-2 rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">
+					<div role="alert" className="flex items-center gap-2 rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">
 						<AlertCircle className="h-4 w-4" />
 						<span>{error}</span>
 					</div>

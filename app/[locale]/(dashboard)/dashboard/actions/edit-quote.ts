@@ -5,6 +5,7 @@ import prisma from '@/lib/db'
 import { auth } from '@/lib/auth'
 import { headers } from 'next/headers'
 import { getDictionary } from '@/lib/get-dictionary'
+import { LOCALE_HEADER } from '@/lib/consts'
 
 interface UpdateQuoteInput {
 	id: string
@@ -16,7 +17,7 @@ interface UpdateQuoteInput {
 }
 
 export async function updateQuote(input: UpdateQuoteInput) {
-	const locale = (await headers()).get('x-i18n-router-locale') ?? 'en'
+	const locale = (await headers()).get(LOCALE_HEADER) ?? 'en'
 	const dict = await getDictionary(locale)
 	try {
 		const session = await auth()

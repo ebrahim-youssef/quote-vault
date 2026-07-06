@@ -1,6 +1,5 @@
 import '@/styles/globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Header from '@/components/shared/header'
 import Footer from '@/components/shared/footer'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -11,7 +10,6 @@ import { Toaster } from 'sonner'
 import { getDictionary } from '@/lib/get-dictionary'
 import { Analytics } from '@vercel/analytics/next'
 
-const inter = Inter({ subsets: ['latin'] })
 const getBaseUrl = () => {
 	if (process.env.NEXT_PUBLIC_SITE_URL) {
 		return process.env.NEXT_PUBLIC_SITE_URL
@@ -71,15 +69,15 @@ export default async function LocaleLayout({ children, params }: Readonly<Locale
 	const { locale } = await params
 	const dir = locale === 'ar' ? 'rtl' : 'ltr'
 	return (
-		<html lang={locale} dir={dir} data-theme="dark" suppressHydrationWarning>
-			<body className={inter.className}>
+		<html lang={locale} dir={dir} suppressHydrationWarning>
+			<body>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
 					<I18nClient locale={locale}>
 						<Header locale={locale} />
 						<main>{children}</main>
 						<Footer locale={locale} />
 						<ScrollToTop />
-						<Toaster richColors position="top-right" />
+						<Toaster richColors position={dir === 'rtl' ? 'top-left' : 'top-right'} />
 					</I18nClient>
 				</ThemeProvider>
 				<Analytics />

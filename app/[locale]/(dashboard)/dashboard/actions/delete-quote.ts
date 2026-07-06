@@ -4,13 +4,14 @@ import prisma from '@/lib/db'
 import { revalidatePath } from 'next/cache'
 import { headers } from 'next/headers'
 import { getDictionary } from '@/lib/get-dictionary'
+import { LOCALE_HEADER } from '@/lib/consts'
 
 interface DeleteQuoteInput {
 	id: string
 }
 
 export async function deleteQuote(input: DeleteQuoteInput) {
-	const locale = (await headers()).get('x-i18n-router-locale') ?? 'en'
+	const locale = (await headers()).get(LOCALE_HEADER) ?? 'en'
 	const dict = await getDictionary(locale)
 	try {
 		const session = await auth()

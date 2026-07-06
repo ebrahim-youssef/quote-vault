@@ -114,12 +114,12 @@ export function EditQuoteModal({ quote }: EditQuoteModalProps) {
 	return (
 		<Dialog open={open} onOpenChange={handleOpenChange}>
 			<DialogTrigger asChild>
-				<Button variant="default" size="sm" className="flex-1 flex items-center gap-2 rtl:flex-row-reverse">
-					<Edit className="me-2 h-4 w-4 rtl:-scale-x-100" />
+				<Button variant="default" size="sm" className="flex-1">
+					<Edit className="h-4 w-4 rtl:-scale-x-100" aria-hidden="true" />
 					{t('navigation.edit')}
 				</Button>
 			</DialogTrigger>
-			<DialogContent className="sm:max-w-lg max-w-2xl">
+			<DialogContent className="sm:max-w-lg max-w-2xl bg-card">
 				<DialogHeader>
 					<DialogTitle className="flex items-center gap-2">
 						<Quote className="h-5 w-5" />
@@ -163,12 +163,12 @@ export function EditQuoteModal({ quote }: EditQuoteModalProps) {
 
 					{/* Public */}
 					<div className="space-y-2">
-						<Label htmlFor="terms">
+						<Label htmlFor="isPublic">
 							{t('editQuote.isPublicLabel')} <span className="text-destructive">*</span>
 						</Label>
 						<div className="flex items-center gap-3">
-							<Switch checked={isPublic} onCheckedChange={(checked) => setIsPublic(checked)} id="terms" />
-							<Label htmlFor="terms">{t('editQuote.isPublicHelp')}</Label>
+							<Switch checked={isPublic} onCheckedChange={(checked) => setIsPublic(checked)} id="isPublic" />
+							<span className="text-sm text-muted-foreground">{t('editQuote.isPublicHelp')}</span>
 						</div>
 					</div>
 
@@ -222,7 +222,8 @@ export function EditQuoteModal({ quote }: EditQuoteModalProps) {
 											disabled={isPending}
 											className="hover:text-destructive transition-colors"
 										>
-											<X className="h-3 w-3" />
+											<X className="h-3 w-3" aria-hidden="true" />
+											<span className="sr-only">{t('editQuote.removeTag', { tag })}</span>
 										</button>
 									</span>
 								))}
@@ -232,7 +233,7 @@ export function EditQuoteModal({ quote }: EditQuoteModalProps) {
 
 					{/* Error Message */}
 					{error && (
-						<div className="flex items-center gap-2 rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">
+						<div role="alert" className="flex items-center gap-2 rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">
 							<AlertCircle className="h-4 w-4" />
 							<span>{error}</span>
 						</div>

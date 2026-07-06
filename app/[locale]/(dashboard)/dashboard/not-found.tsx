@@ -6,10 +6,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import NavigateBackBtn from '@/components/shared/navigate-back-btn'
 import { headers } from 'next/headers'
 import { getDictionary } from '@/lib/get-dictionary'
+import { LOCALE_HEADER } from '@/lib/consts'
 
 export default async function DashboardNotFound() {
 	const headersList = await headers()
-	const locale = headersList.get('x-i18n-router-locale') || 'en'
+	const locale = headersList.get(LOCALE_HEADER) || 'en'
 
 	const dictionary = await getDictionary(locale)
 

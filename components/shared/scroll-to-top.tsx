@@ -31,16 +31,16 @@ export default function ScrollToTop({ threshold = 300, className = '' }: Props) 
 	return (
 		<div
 			aria-hidden={!visible}
-			className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 transition-all duration-500 ${
+			className={`fixed bottom-4 end-4 sm:bottom-6 sm:end-6 z-50 transition-all duration-500 ${
 				visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'
 			} ${className}`}
 		>
 			<Button
-				aria-label="Scroll to top"
-				title="Scroll to top"
+				aria-label={t('common.scrollToTop')}
+				title={t('common.scrollToTop')}
 				onClick={handleClick}
 				size="icon"
-				className="h-9 w-9 sm:h-11 sm:w-11 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 active:scale-95"
+				className="h-10 w-10 rounded-full shadow-md hover:shadow-gold transition-all duration-200 hover:scale-110 active:scale-95"
 			>
 				<ArrowUp className="h-4 w-4 sm:h-5 sm:w-5" />
 				<span className="sr-only">{t('common.scrollToTop')}</span>

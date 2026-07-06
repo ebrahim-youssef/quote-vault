@@ -8,6 +8,8 @@ interface CommonDictionary {
 	toggleTheme: string
 	toggleLanguage: string
 	scrollToTop: string
+	user: string
+	anonymous: string
 }
 
 interface NavigationDictionary {
@@ -31,6 +33,14 @@ interface LandingDictionary {
 	ctaDescription: string
 	getStarted: string
 	learnMore: string
+	exploreQuotes: string
+	featureSaveTitle: string
+	featureSaveDesc: string
+	featureOrganizeTitle: string
+	featureOrganizeDesc: string
+	featureShareTitle: string
+	featureShareDesc: string
+	communityEyebrow: string
 }
 
 interface AddQuoteDictionary {
@@ -54,6 +64,7 @@ interface AddQuoteDictionary {
 	errorCreate: string
 	successCreated: string
 	errorUnexpected: string
+	removeTag: string
 }
 
 interface DashboardDictionary {
@@ -63,6 +74,7 @@ interface DashboardDictionary {
 	publicQuotes: string
 	yourQuotes: string
 	manageCollection: string
+	collection: string
 }
 
 interface DashboardEmptyDictionary {
@@ -92,6 +104,7 @@ interface EditQuoteDictionary {
 	errorFill: string
 	successUpdated: string
 	unexpected: string
+	removeTag: string
 }
 
 interface DeleteQuoteDictionary {
@@ -135,6 +148,7 @@ interface ErrorsDictionary {
 interface NotFoundDictionary {
 	dashboardMissing: string
 	pageTitle: string
+	pageDescription: string
 	home: string
 }
 
@@ -145,8 +159,9 @@ interface FooterDictionary {
 	dashboard: string
 	privacy: string
 	terms: string
+	tagline: string
 	brandDescription: string
-	allRights: string
+	builtWithCare: string
 }
 
 interface AuthDictionary {
@@ -154,6 +169,8 @@ interface AuthDictionary {
 	passwordPlaceholder: string
 	signIn: string
 	signOut: string
+	signInTitle: string
+	signInDescription: string
 }
 
 interface AuthErrorsDictionary {

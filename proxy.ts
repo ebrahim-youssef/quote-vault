@@ -22,7 +22,8 @@ export default auth((req) => {
 // Configure which routes should be processed by middleware
 export const config = {
 	matcher: [
-		// Include all routes except API and static assets
-		'/((?!api|_next/static|_next/image|favicon.ico).*)'
+		// Include all routes except API and static assets (any path containing a dot,
+		// e.g. /fonts/*.ttf, /assets/*.svg, /messages/*.json)
+		'/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'
 	]
 }

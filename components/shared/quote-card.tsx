@@ -1,69 +1,112 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { headers } from 'next/headers'
 import { getDictionary } from '@/lib/get-dictionary'
 import { isTextArabic } from '@/lib/utils'
+import { LOCALE_HEADER } from '@/lib/consts'
 
 interface QuoteCardProps {
 	quote: string
 	author: string
+	source?: string | null
 	tags?: string[]
 	userName: string | null
 	isPublic?: boolean
 	children?: React.ReactNode
 }
 
-export async function QuoteCard({ quote, author, tags = [], userName, isPublic, children }: QuoteCardProps) {
+export async function QuoteCard({ quote, author, source, tags = [], userName, isPublic, children }: QuoteCardProps) {
 	const isArabic = isTextArabic(quote)
 
-	const locale = (await headers()).get('x-i18n-router-locale') || 'en'
+	const locale = (await headers()).get(LOCALE_HEADER) || 'en'
 	const dictionary = await getDictionary(locale)
 
 	const statusPublic = dictionary?.status?.public ?? 'Public'
 	const statusPrivate = dictionary?.status?.private ?? 'Private'
 
 	return (
-		<Card className="relative group rounded-lg border border-border bg-background p-8 shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
-			<CardContent className="flex-1 mt-4">
+		<div
+			className="quote-card relative flex flex-col h-full overflow-hidden bg-card border border-border"
+			style={{
+				borderRadius: 'var(--radius-lg)',
+				boxShadow: 'var(--shadow-sm)',
+				transition: 'box-shadow var(--dur-base) var(--ease-soft), transform var(--dur-base) var(--ease-soft)'
+			}}
+		>
+			{/* Star accent */}
+			<span className="ia-star-accent" aria-hidden="true" />
+
+			{/* Public/private badge */}
+			{isPublic !== undefined && (
+				<div className="absolute top-3 start-3">
+					<span
+						className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full"
+						style={{
+							...(isPublic
+								? {
+										background: 'color-mix(in srgb, var(--gold-500) 18%, transparent)',
+										color: 'var(--gold-600)'
+									}
+								: {
+										background: 'var(--tag-bg)',
+										color: 'var(--tag-text)'
+									})
+						}}
+					>
+						{isPublic ? statusPublic : statusPrivate}
+					</span>
+				</div>
+			)}
+
+			{/* Quote body */}
+			<div className="flex-1 px-6 pt-10 pb-4">
 				<p
 					dir={isArabic ? 'rtl' : 'ltr'}
-					className={`text-start text-lg leading-[1.6] line-clamp-4 mb-4 ${isArabic ? 'font-serif-ar' : 'serif!'}`}
+					className="text-start text-lg leading-[1.6] line-clamp-4 font-semibold text-foreground"
+					style={{ fontFamily: isArabic ? 'var(--font-ar)' : 'var(--font-display)' }}
 				>
 					{quote}
 				</p>
-			</CardContent>
+			</div>
 
-			<CardHeader className="space-y-4 pt-0">
-				<CardTitle className="text-sm font-medium text-foreground">&mdash; {author}</CardTitle>
+			{/* Footer */}
+			<div className="px-6 pb-6 flex flex-col gap-3">
+				{/* Author */}
+				<p className="text-sm font-medium" style={{ color: 'var(--primary)' }}>
+					&mdash; {author}
+				</p>
+				{source && (
+					<p className="text-xs text-muted-foreground">{source}</p>
+				)}
 
+				{/* Tags */}
 				{tags.length > 0 && (
-					<div className="flex flex-wrap gap-2">
+					<div className="flex flex-wrap gap-1.5">
 						{tags.map((tag) => (
-							<Badge key={tag} variant="secondary" className="text-xs">
+							<span
+								key={tag}
+								className="text-xs px-2.5 py-1 rounded border border-border"
+								style={{
+									background: 'var(--tag-bg)',
+									color: 'var(--tag-text)'
+								}}
+							>
 								#{tag}
-							</Badge>
+							</span>
 						))}
 					</div>
 				)}
 
+				{/* Username */}
 				{userName && (
-					<div className="pt-4 border-t border-border">
-						<CardDescription className="text-sm text-muted-foreground mb-2">
-							<span className="text-foreground font-medium">@{userName}</span>
-						</CardDescription>
+					<div className="pt-3 border-t border-border">
+						<p className="text-sm text-muted-foreground">
+							<span className="font-medium" style={{ color: 'var(--primary)' }}>@{userName}</span>
+						</p>
 					</div>
 				)}
 
-				{isPublic !== undefined && (
-					<div className="absolute inset-y-3 inset-inline-end-3">
-						<Badge variant={isPublic ? 'secondary' : 'default'}>
-							{isPublic ? statusPublic : statusPrivate}
-						</Badge>
-					</div>
-				)}
-
-				{children && <div className="flex gap-2 pt-4">{children}</div>}
-			</CardHeader>
-		</Card>
+				{/* Action buttons */}
+				{children && <div className="flex gap-2 pt-2">{children}</div>}
+			</div>
+		</div>
 	)
 }

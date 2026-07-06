@@ -1,165 +1,179 @@
 {
-	"common": {
-		"home": "الصفحة الرئيسية",
-		"dashboard": "لوحة التحكم",
-		"profile": "الملف الشخصي",
-		"settings": "الإعدادات",
-		"logout": "تسجيل الخروج",
-		"language": "اللغة",
-		"toggleTheme": "تغيير الوضع",
-		"toggleLanguage": "تغير اللغة",
-		"scrollToTop": "التمرير للأعلى"
-	},
-	"navigation": {
-		"back": "رجوع",
-		"next": "التالي",
-		"cancel": "إلغاء",
-		"save": "حفظ",
-		"delete": "حذف",
-		"edit": "تعديل"
-	},
-	"landing": {
-		"latestBadge": "أحدث اقتباس",
-		"discoverTitle": "اكتشف الحكمة",
-		"discoverDescription": "استكشف مجموعة من الاقتباسات التي يشاركها مجتمعنا",
-		"recentTitle": "اقتباسات حديثة",
-		"recentDescription": "استكشف الحكمة التي يشاركها أعضاء مجتمعنا",
-		"noQuotes": "لا توجد اقتباسات بعد. كن أول من يشارك!",
-		"startCreating": "ابدأ بالإنشاء",
-		"ctaTitle": "ابنِ مجموعتك من الاقتباسات",
-		"ctaDescription": "احفظ ونظم وشارك اقتباساتك المفضلة مع مجتمعنا. أنشئ صور اقتباس جميلة وسهلة المشاركة.",
-		"getStarted": "ابدأ الآن",
-		"learnMore": "تعرف أكثر"
-	},
-	"addQuote": {
-		"addButton": "إضافة اقتباس جديد",
-		"title": "إضافة اقتباس جديد",
-		"description": "أنشئ اقتباسًا جديدًا لإضافته إلى مجموعتك",
-		"quoteLabel": "الاقتباس",
-		"authorLabel": "المؤلف",
-		"sourceLabel": "المصدر (اختياري)",
-		"sourceHelp": "من أين جاء هذا الاقتباس",
-		"tagsLabel": "الوسوم (اختياري)",
-		"tagsAdd": "إضافة",
-		"tagsPlaceholder": "أضف وسمًا واضغط Enter",
-		"quotePlaceholder": "أدخل نص الاقتباس...",
-		"authorPlaceholder": "مثال: ألبرت أينشتاين",
-		"sourcePlaceholder": "مثال: عنوان كتاب، خطاب، مقابلة...",
-		"cancel": "إلغاء",
-		"creating": "جارٍ الإنشاء...",
-		"saveQuote": "حفظ الاقتباس",
-		"errorFill": "يرجى ملء جميع الحقول المطلوبة",
-		"errorCreate": "فشل في إنشاء الاقتباس",
-		"successCreated": "تم إنشاء الاقتباس بنجاح",
-		"errorUnexpected": "حدث خطأ غير متوقع"
-	},
-	"dashboard": {
-		"editQuote": "تعديل الاقتباس",
-		"deleteQuote": "حذف الاقتباس",
-		"quotesCollected": "الاقتباسات المجمعة",
-		"publicQuotes": "اقتباسات عامة",
-		"yourQuotes": "اقتباستك",
-		"manageCollection": "قم بإدارة مجموعة اقتباساتك"
-	},
-
-	"dashboardEmpty": {
-		"noQuotesTitle": "لا توجد اقتباسات بعد",
-		"noQuotesDescription": "ابدأ ببناء مجموعة اقتباساتك بإنشاء اقتباسك الأول.",
-		"startBuilding": "ابدأ بالإنشاء"
-	},
-
-	"editQuote": {
-		"title": "تعديل الاقتباس",
-		"description": "قم بإجراء تغييرات على اقتباسك",
-		"quoteLabel": "الاقتباس",
-		"authorLabel": "المؤلف",
-		"sourceLabel": "المصدر (اختياري)",
-		"isPublicLabel": "عام",
-		"isPublicHelp": "اضبط هذا الاقتباس على عام",
-		"sourceHelp": "من أين جاء هذا الاقتباس",
-		"tagsLabel": "الوسوم (اختياري)",
-		"tagsAdd": "إضافة",
-		"tagsPlaceholder": "أضف وسمًا واضغط Enter",
-		"quotePlaceholder": "أدخل نص الاقتباس...",
-		"authorPlaceholder": "مثال: ألبرت أينشتاين",
-		"sourcePlaceholder": "مثال: عنوان كتاب، خطاب، مقابلة...",
-		"cancel": "إلغاء",
-		"updating": "جارٍ التحديث...",
-		"saveChanges": "حفظ التغييرات",
-		"errorFill": "يرجى ملء جميع الحقول المطلوبة",
-		"successUpdated": "تم تحديث الاقتباس بنجاح",
-		"unexpected": "حدث خطأ غير متوقع"
-	},
-	"deleteQuote": {
-		"title": "حذف الاقتباس",
-		"description": "هل أنت متأكد أنك تريد حذف هذا الاقتباس؟ لا يمكن التراجع عن هذا الإجراء.",
-		"cancel": "إلغاء",
-		"deleting": "جارٍ الحذف...",
-		"deleteAction": "حذف الاقتباس",
-		"successDeleted": "تم حذف الاقتباس بنجاح",
-		"errorDelete": "فشل في حذف الاقتباس",
-		"unexpected": "حدث خطأ غير متوقع"
-	},
-
-	"htmlToImage": {
-		"sharedBy": "مشارك بواسطة"
-	},
-	"errors": {
-		"dashboardTitle": "خطأ في لوحة التحكم",
-		"dashboardDescription": "حدث خطأ في لوحة التحكم الخاصة بك.",
-		"tryAgain": "حاول مرة أخرى",
-		"somethingWrong": "حدث خطأ!",
-		"processingError": "واجهنا خطأ أثناء معالجة طلبك.",
-		"mustBeLoggedIn": "يجب أن تكون مسجلاً لتتمكن من المتابعة",
-		"invalidFields": "حقل النص والمؤلف مطلوبان",
-		"maxTags": "الحد الأقصى 50 وسمًا",
-		"alreadyExists": "هذا الاقتباس موجود بالفعل",
-		"failedCreate": "فشل في إنشاء الاقتباس. حاول مرة أخرى.",
-		"failedDelete": "فشل في حذف الاقتباس. حاول مرة أخرى.",
-		"failedUpdate": "فشل في تحديث الاقتباس. حاول مرة أخرى.",
-		"invalidId": "معرّف اقتباس غير صالح",
-		"quoteNotFound": "لم يتم العثور على الاقتباس",
-		"noPermission": "ليس لديك إذن للقيام بهذا الإجراء",
-		"couldNotFindElement": "تعذر العثور على عنصر الاقتباس",
-		"downloadSuccess": "تم تنزيل الاقتباس بنجاح",
-		"downloadFailed": "فشل في تنزيل الاقتباس. حاول مرة أخرى.",
-		"downloading": "جارٍ التنزيل...",
-		"downloadQuote": "تنزيل الاقتباس"
-	},
-	"notFound": {
-		"pageTitle": "الصفحة غير موجودة",
-		"dashboardMissing": "الصفحة التي تبحث عنها غير موجودة.",
-		"home": "الصفحة الرئيسية"
-	},
-	"footer": {
-		"followUs": "تابعنا",
-		"navigation": "التنقل",
-		"home": "الصفحة الرئيسية",
-		"dashboard": "لوحة التحكم",
-		"privacy": "الخصوصية",
-		"terms": "الشروط",
-		"brandDescription": "نبني تجارب مذهلة للويب الحديث.",
-		"allRights": "جميع الحقوق محفوظة."
-	},
-	"branding": {
-		"name": "خزنة الاقتباسات",
-		"description": "نظام إدارة الاقتباسات الشخصي الخاص بك."
-	},
-	"status": {
-		"public": "عام",
-		"private": "خاص"
-	},
-	"auth": {
-		"emailPlaceholder": "البريد الإلكتروني",
-		"passwordPlaceholder": "كلمة المرور",
-		"signIn": "تسجيل الدخول",
-		"signOut": "تسجيل الخروج"
-	},
-	"authErrors": {
-		"invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
-		"authFailed": "فشل المصادقة. حاول مرة أخرى.",
-		"signinError": "حدث خطأ أثناء تسجيل الدخول",
-		"unexpected": "حدث خطأ غير متوقع",
-		"failed": "فشل تسجيل الدخول"
-	}
+  "common": {
+    "home": "الصفحة الرئيسية",
+    "dashboard": "لوحة التحكم",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج",
+    "language": "اللغة",
+    "toggleTheme": "تغيير الوضع",
+    "toggleLanguage": "تغير اللغة",
+    "scrollToTop": "التمرير للأعلى",
+    "user": "مستخدم",
+    "anonymous": "مجهول"
+  },
+  "navigation": {
+    "back": "رجوع",
+    "next": "التالي",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل"
+  },
+  "landing": {
+    "latestBadge": "أحدث اقتباس",
+    "discoverTitle": "اكتشف الحكمة",
+    "discoverDescription": "استكشف مجموعة من الاقتباسات التي يشاركها مجتمعنا",
+    "recentTitle": "اقتباسات حديثة",
+    "recentDescription": "استكشف الحكمة التي يشاركها أعضاء مجتمعنا",
+    "noQuotes": "لا توجد اقتباسات بعد. كن أول من يشارك!",
+    "startCreating": "ابدأ بالإنشاء",
+    "ctaTitle": "ابنِ مجموعتك من الاقتباسات",
+    "ctaDescription": "احفظ الكلام اللي يعجبك، نظّمه، وشاركه مع الناس. وتقدر تصدّره كصورة كمان.",
+    "getStarted": "ابدأ الآن",
+    "learnMore": "تعرف أكثر",
+    "exploreQuotes": "استكشف الاقتباسات",
+    "featureSaveTitle": "احفظ",
+    "featureSaveDesc": "احفظ الاقتباسات من الكتب والمقالات وأي مكان يلهمك.",
+    "featureOrganizeTitle": "نظّم",
+    "featureOrganizeDesc": "صنّف مجموعتك باستخدام الوسوم للعثور على أي اقتباس فوراً.",
+    "featureShareTitle": "شارك",
+    "featureShareDesc": "صدّر بطاقات اقتباسات جميلة كصور لمشاركتها مع العالم.",
+    "communityEyebrow": "المجتمع"
+  },
+  "addQuote": {
+    "addButton": "إضافة اقتباس جديد",
+    "title": "إضافة اقتباس جديد",
+    "description": "أنشئ اقتباسًا جديدًا لإضافته إلى مجموعتك",
+    "quoteLabel": "الاقتباس",
+    "authorLabel": "المؤلف",
+    "sourceLabel": "المصدر (اختياري)",
+    "sourceHelp": "من أين جاء هذا الاقتباس",
+    "tagsLabel": "الوسوم (اختياري)",
+    "tagsAdd": "إضافة",
+    "tagsPlaceholder": "أضف وسمًا واضغط Enter",
+    "quotePlaceholder": "أدخل نص الاقتباس...",
+    "authorPlaceholder": "مثال: ألبرت أينشتاين",
+    "sourcePlaceholder": "مثال: عنوان كتاب، خطاب، مقابلة...",
+    "cancel": "إلغاء",
+    "creating": "جارٍ الإنشاء...",
+    "saveQuote": "حفظ الاقتباس",
+    "errorFill": "يرجى ملء جميع الحقول المطلوبة",
+    "errorCreate": "فشل في إنشاء الاقتباس",
+    "successCreated": "تم إنشاء الاقتباس بنجاح",
+    "errorUnexpected": "حدث خطأ غير متوقع",
+    "removeTag": "إزالة {{tag}}"
+  },
+  "dashboard": {
+    "editQuote": "تعديل الاقتباس",
+    "deleteQuote": "حذف الاقتباس",
+    "quotesCollected": "الاقتباسات المجمعة",
+    "publicQuotes": "اقتباسات عامة",
+    "yourQuotes": "اقتباساتك",
+    "manageCollection": "كل اقتباساتك في مكان واحد.",
+    "collection": "المجموعة"
+  },
+  "dashboardEmpty": {
+    "noQuotesTitle": "لا توجد اقتباسات بعد",
+    "noQuotesDescription": "أضف اقتباسك الأول وابدأ تبني مجموعتك.",
+    "startBuilding": "ابدأ بالإنشاء"
+  },
+  "editQuote": {
+    "title": "تعديل الاقتباس",
+    "description": "عدّل اقتباسك زي ما تحب",
+    "quoteLabel": "الاقتباس",
+    "authorLabel": "المؤلف",
+    "sourceLabel": "المصدر (اختياري)",
+    "isPublicLabel": "عام",
+    "isPublicHelp": "اضبط هذا الاقتباس على عام",
+    "sourceHelp": "من أين جاء هذا الاقتباس",
+    "tagsLabel": "الوسوم (اختياري)",
+    "tagsAdd": "إضافة",
+    "tagsPlaceholder": "أضف وسمًا واضغط Enter",
+    "quotePlaceholder": "أدخل نص الاقتباس...",
+    "authorPlaceholder": "مثال: ألبرت أينشتاين",
+    "sourcePlaceholder": "مثال: عنوان كتاب، خطاب، مقابلة...",
+    "cancel": "إلغاء",
+    "updating": "جارٍ التحديث...",
+    "saveChanges": "حفظ التغييرات",
+    "errorFill": "يرجى ملء جميع الحقول المطلوبة",
+    "successUpdated": "تم تحديث الاقتباس بنجاح",
+    "unexpected": "حدث خطأ غير متوقع",
+    "removeTag": "إزالة {{tag}}"
+  },
+  "deleteQuote": {
+    "title": "حذف الاقتباس",
+    "description": "هل أنت متأكد أنك تريد حذف هذا الاقتباس؟ لا يمكن التراجع عن هذا الإجراء.",
+    "cancel": "إلغاء",
+    "deleting": "جارٍ الحذف...",
+    "deleteAction": "حذف الاقتباس",
+    "successDeleted": "تم حذف الاقتباس بنجاح",
+    "errorDelete": "فشل في حذف الاقتباس",
+    "unexpected": "حدث خطأ غير متوقع"
+  },
+  "htmlToImage": {
+    "sharedBy": "مشارك بواسطة"
+  },
+  "errors": {
+    "dashboardTitle": "خطأ في لوحة التحكم",
+    "dashboardDescription": "حدث خطأ في لوحة التحكم الخاصة بك.",
+    "tryAgain": "حاول مرة أخرى",
+    "somethingWrong": "حدث خطأ!",
+    "processingError": "حصل خطأ. حاول مرة تانية.",
+    "mustBeLoggedIn": "يجب أن تكون مسجلاً لتتمكن من المتابعة",
+    "invalidFields": "حقل النص والمؤلف مطلوبان",
+    "maxTags": "الحد الأقصى 50 وسمًا",
+    "alreadyExists": "هذا الاقتباس موجود بالفعل",
+    "failedCreate": "فشل في إنشاء الاقتباس. حاول مرة أخرى.",
+    "failedDelete": "فشل في حذف الاقتباس. حاول مرة أخرى.",
+    "failedUpdate": "فشل في تحديث الاقتباس. حاول مرة أخرى.",
+    "invalidId": "معرّف اقتباس غير صالح",
+    "quoteNotFound": "لم يتم العثور على الاقتباس",
+    "noPermission": "ليس لديك إذن للقيام بهذا الإجراء",
+    "couldNotFindElement": "تعذر العثور على عنصر الاقتباس",
+    "downloadSuccess": "تم تنزيل الاقتباس بنجاح",
+    "downloadFailed": "فشل في تنزيل الاقتباس. حاول مرة أخرى.",
+    "downloading": "جارٍ التنزيل...",
+    "downloadQuote": "تنزيل الاقتباس"
+  },
+  "notFound": {
+    "pageTitle": "الصفحة غير موجودة",
+    "dashboardMissing": "الصفحة التي تبحث عنها غير موجودة.",
+    "pageDescription": "الصفحة التي تبحث عنها غير موجودة.",
+    "home": "الصفحة الرئيسية"
+  },
+  "footer": {
+    "followUs": "تابعنا",
+    "navigation": "التنقل",
+    "home": "الصفحة الرئيسية",
+    "dashboard": "لوحة التحكم",
+    "privacy": "الخصوصية",
+    "terms": "الشروط",
+    "tagline": "دافئ. راسخ. هادف.",
+    "brandDescription": "مكان بسيط تحفظ فيه الكلام اللي أثّر فيك.",
+    "builtWithCare": "صُنع بعناية"
+  },
+  "branding": {
+    "name": "خزنة الاقتباسات",
+    "description": "مساحتك الشخصية لاقتباساتك اللي بتحبها."
+  },
+  "status": {
+    "public": "عام",
+    "private": "خاص"
+  },
+  "auth": {
+    "emailPlaceholder": "البريد الإلكتروني",
+    "passwordPlaceholder": "كلمة المرور",
+    "signIn": "تسجيل الدخول",
+    "signOut": "تسجيل الخروج",
+    "signInTitle": "تسجيل الدخول إلى خزنة الاقتباسات",
+    "signInDescription": "جديد هنا؟ سجّل دخولك وهنعمل لك حساب تلقائياً."
+  },
+  "authErrors": {
+    "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+    "authFailed": "فشل المصادقة. حاول مرة أخرى.",
+    "signinError": "حدث خطأ أثناء تسجيل الدخول",
+    "unexpected": "حدث خطأ غير متوقع",
+    "failed": "فشل تسجيل الدخول"
+  }
 }

@@ -5,10 +5,11 @@ import { Home } from 'lucide-react'
 import NavigateBackBtn from '@/components/shared/navigate-back-btn'
 import { headers } from 'next/headers'
 import { getDictionary } from '@/lib/get-dictionary'
+import { LOCALE_HEADER } from '@/lib/consts'
 
 export default async function NotFound() {
 	const headersList = await headers()
-	const locale = headersList.get('x-i18n-router-locale') || 'en'
+	const locale = headersList.get(LOCALE_HEADER) || 'en'
 
 	const dictionary = await getDictionary(locale)
 
@@ -21,7 +22,7 @@ export default async function NotFound() {
 						{dictionary?.notFound?.pageTitle ?? 'Page Not Found'}
 					</CardTitle>
 					<CardDescription>
-						{dictionary?.notFound?.pageTitle ?? "The page you're looking for could not be found."}
+						{dictionary?.notFound?.pageDescription ?? "The page you're looking for could not be found."}
 					</CardDescription>
 				</CardHeader>
 				<CardContent className="flex gap-3">
